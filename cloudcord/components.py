@@ -3,11 +3,11 @@
 .. note::
 
         If you want to register global checks and error handlers, all Views must
-        inherit from :class:`~EzView` instead of :class:`discord.ui.View`.
+        inherit from :class:`~clView` instead of :class:`discord.ui.View`.
 
         .. code-block:: python
 
-            from ezcord import View
+            from clcord import View
 
             class MyView(View):  # right
                 ...
@@ -54,19 +54,19 @@ def event(coro):
     -------
     .. code-block:: python
 
-        @ezcord.event
+        @clcord.event
         async def view_check(interaction):
             return interaction.user.id == 12345  # Returns True or False
 
-        @ezcord.event
+        @clcord.event
         async def on_view_check_failure(interaction):
             await interaction.response.send_message("You can't use this!")
 
-        @ezcord.event
+        @clcord.event
         async def on_view_error(error, item, interaction):
             await interaction.response.send_message("Something went wrong!")
 
-        @ezcord.event
+        @clcord.event
         async def on_modal_error(error, interaction):
             await interaction.response.send_message("Something went wrong!")
     """
@@ -134,7 +134,7 @@ class View(discord.ui.View):
     ) -> None:
         """Sends an error message to a webhook, if the URL was passed in :class:`.Bot`.
 
-        Executes all registered error handlers with the ``@ezcord.event`` decorator.
+        Executes all registered error handlers with the ``@clcord.event`` decorator.
         """
         if not PYCORD:
             error, item, interaction = item, interaction, error
@@ -182,7 +182,7 @@ class Modal(discord.ui.Modal):
     async def on_error(self, error: Exception, interaction: discord.Interaction) -> None:
         """Sends an error message to a webhook, if the webhook URL was passed into :class:`.Bot`.
 
-        Executes all registered error handlers with the ``@ezcord.event`` decorator.
+        Executes all registered error handlers with the ``@clcord.event`` decorator.
         """
         if not PYCORD:
             error, interaction = interaction, error
@@ -200,5 +200,5 @@ class Modal(discord.ui.Modal):
             await error_coro(error, interaction)
 
 
-EzModal = Modal
-EzView = View
+clModal = Modal
+clView = View

@@ -23,7 +23,7 @@ def load_lang(language: str) -> dict[str, dict[str, str]]:
     # check if the user has a custom language file
     for root, directories, files in os.walk(os.getcwd()):
         for filename in files:
-            if filename != f"ez_{language}.json":
+            if filename != f"cl_{language}.json":
                 continue
 
             log.debug(f"Custom language file loaded: **{filename}**")

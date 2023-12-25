@@ -12,7 +12,7 @@ Here is an example for sending a success message within a Pycord application com
     bot = cloudcord.Bot()
 
     @bot.slash_command()
-    async def hey(ctx: cloudcord.EzContext):
+    async def hey(ctx: cloudcord.clContext):
         await ctx.success("Success!")
 
 In any other case, the interaction must be passes to the template method.
@@ -313,7 +313,7 @@ async def send(
     return await _process_message(target, embed, txt, title, edit, ephemeral, **kwargs)
 
 
-class EzContext(_ctx_type):  # type: ignore
+class clContext(_ctx_type):  # type: ignore
     """A custom context to access embed templates. Only works within Pycord application commands."""
 
     async def error(self, msg: str, **kwargs):

@@ -11,7 +11,7 @@ class Blacklist:
     owner_only: bool
 
 
-class EzConfig:
+class clConfig:
     """A class to store configuration values.
 
     These values are usually set only once, but are used throughout the runtime of the bot.

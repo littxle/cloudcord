@@ -13,7 +13,7 @@ from ..blacklist import _BanDB
 from ..bot import Bot, Cog
 from ..components import event
 from ..errors import Blacklisted, ErrorMessageSent
-from ..internal import EzConfig, t
+from ..internal import clConfig, t
 from ..internal.dc import DPY, PYCORD, commands, discord
 from ..logs import log
 from ..utils import create_text_file
@@ -32,8 +32,8 @@ async def get_or_fetch_user(bot, user_id: int):
 
 async def _check_blacklist(interaction: discord.Interaction) -> bool:
     bans = await _db.get_bans()
-    if interaction.user.id in bans and EzConfig.blacklist:
-        if EzConfig.blacklist.raise_error:
+    if interaction.user.id in bans and clConfig.blacklist:
+        if clConfig.blacklist.raise_error:
             raise Blacklisted()
         else:
             await interaction.response.send_message(t("no_perms"), ephemeral=True)
@@ -58,7 +58,7 @@ class Blacklist(Cog, hidden=True):
         return await _check_blacklist(ctx)
 
     async def cog_check(self, ctx):
-        if EzConfig.blacklist.owner_only:
+        if clConfig.blacklist.owner_only:
             if not await self.bot.is_owner(ctx.user):
                 if DPY:
                     return False
@@ -88,7 +88,7 @@ class Blacklist(Cog, hidden=True):
         admin = discord.SlashCommandGroup(
             t("admin_group"),
             description="cloudcord admin commands",
-            guild_ids=EzConfig.admin_guilds,
+            guild_ids=clConfig.admin_guilds,
             default_member_permissions=discord.Permissions(administrator=True),
         )
         leave = admin.create_subgroup("leave")
@@ -97,7 +97,7 @@ class Blacklist(Cog, hidden=True):
         admin = discord.app_commands.Group(
             name=t("admin_group"),
             description="cloudcord admin commands",
-            guild_ids=EzConfig.admin_guilds,
+            guild_ids=clConfig.admin_guilds,
             default_permissions=discord.Permissions(administrator=True),
         )
         leave = discord.app_commands.Group(

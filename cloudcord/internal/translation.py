@@ -5,7 +5,7 @@ from functools import cache
 from pathlib import Path
 
 from ..logs import log
-from .config import EzConfig
+from .config import clConfig
 from .language.languages import load_lang
 
 
@@ -171,7 +171,7 @@ def t(key: str, *args: str):
 @cache
 def get_lang():
     """Get the language from the config class."""
-    return EzConfig.lang
+    return clConfig.lang
 
 
 def set_lang(lang: str):
@@ -182,4 +182,4 @@ def set_lang(lang: str):
     lang:
         The language to set.
     """
-    EzConfig.lang = lang
+    clConfig.lang = lang

@@ -1,5 +1,5 @@
 __title__ = "cloudcord"
-__author__ = "timoodev"
+__author__ = "littxle"
 __license__ = "MIT"
 __version__ = "0.5.1"
 

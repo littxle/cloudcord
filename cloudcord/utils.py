@@ -123,7 +123,7 @@ def codeblock(content: int | str, *, lang: str = "yaml", unit: str = ""):
     return f"```{lang}\n{content}```"
 
 
-def ez_autocomplete(values):
+def cl_autocomplete(values):
     """A similar function as :func:`~discord.utils.basic_autocomplete`, but instead of returning
     options starting with the user's value, it returns options containing the user's value.
 

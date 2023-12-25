@@ -5,7 +5,7 @@ from copy import deepcopy
 from functools import cache
 
 from ..internal.dc import discord
-from .config import EzConfig
+from .config import clConfig
 
 _TEMPLATES: dict[str, discord.Embed] = {
     "success_embed": discord.Embed(color=discord.Color.green()),
@@ -31,17 +31,17 @@ def save_embeds(**kwargs: discord.Embed | str):
         else:
             embeds[name] = embed.to_dict()
 
-    EzConfig.embed_templates = embeds
+    clConfig.embed_templates = embeds
 
 
 @cache
 def load_embed(name: str) -> discord.Embed | str:
     """Load an embed template."""
 
-    if not EzConfig.embed_templates:
+    if not clConfig.embed_templates:
         save_embeds()
 
-    embeds = EzConfig.embed_templates
+    embeds = clConfig.embed_templates
 
     if isinstance(embeds[name], str):
         return embeds[name]

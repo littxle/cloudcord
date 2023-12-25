@@ -15,8 +15,8 @@ sys.path.insert(0, os.path.abspath("../"))
 from cloudcord import __version__
 
 project = "cloudcord"
-copyright = f"{date.today().year}, timoodev"
-author = "timoodev"
+copyright = f"{date.today().year}, littxle"
+author = "littxle"
 release = __version__
 
 version = __version__

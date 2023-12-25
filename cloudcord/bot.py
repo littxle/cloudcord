@@ -11,13 +11,13 @@ from typing import TYPE_CHECKING, Any, Callable
 import aiohttp
 from dotenv import load_dotenv
 
-from .emb import EzContext
+from .emb import clContext
 from .emb import error as error_emb
 from .enums import CogLog, HelpStyle, ReadyEvent
 from .errors import ErrorMessageSent
 from .internal import (
     READY_TITLE,
-    EzConfig,
+    clConfig,
     get_error_text,
     load_lang,
     print_custom_ready,
@@ -145,7 +145,7 @@ class Bot(_main_bot):  # type: ignore
         # Needed for Discord.py command mentions
         self.all_dpy_commands = None
 
-    async def get_application_context(self, interaction: discord.Interaction, cls=EzContext):
+    async def get_application_context(self, interaction: discord.Interaction, cls=clContext):
         """A custom application command context for Pycord."""
         return await super().get_application_context(interaction, cls=cls)
 
@@ -708,13 +708,13 @@ class Bot(_main_bot):  # type: ignore
             Whether the blacklist can only be managed by the bot owner. Defaults to ``True``.
         """
 
-        EzConfig.blacklist = Blacklist(
+        clConfig.blacklist = Blacklist(
             db_path,
             db_name,
             raise_error,
             owner_only,
         )
-        EzConfig.admin_guilds = admin_server_ids
+        clConfig.admin_guilds = admin_server_ids
 
         self.enabled_extensions.append("blacklist")
         if not DPY:

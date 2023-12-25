@@ -13,12 +13,12 @@ You can modify the default language files and even create your own language file
 Modify language files
 ---------------------
 
-1. Create a JSON file with the prefix ``ez_`` somewhere in your project.
+1. Create a JSON file with the prefix ``cl_`` somewhere in your project.
 
-   - If you want to modify the English language file: ``ez_en.json``.
-   - If you want to create a new language file: ``ez_[language].json``.
+   - If you want to modify the English language file: ``cl_en.json``.
+   - If you want to create a new language file: ``cl_[language].json``.
 
-   For example, if you want to create a French language file, the file name could be ``ez_fr.json``.
+   For example, if you want to create a French language file, the file name could be ``cl_fr.json``.
 
 2. Search the :ref:`language files <language>` and find keys you want to override.
 
@@ -28,7 +28,7 @@ Modify language files
 
 .. code-block:: python
 
-   bot = ezcord.Bot(language="fr")  # French (loaded from ez_fr.json)
+   bot = clcord.Bot(language="fr")  # French (loaded from cl_fr.json)
 
 
 .. _language:

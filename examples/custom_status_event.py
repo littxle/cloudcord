@@ -1,7 +1,7 @@
-import ezycord
+import cloudcord
 import discord
 
-bot = ezycord.Bot()
+bot = cloudcord.Bot()
 
 def get_coins(): # This can also be async
     return 69

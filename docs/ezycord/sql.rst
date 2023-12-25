@@ -2,6 +2,6 @@ AioSQLite
 =======================
 Some simple helper functions for ``aiosqlite``.
 
-.. autoclass:: ezycord.sql.DBHandler
+.. autoclass:: cloudcord.sql.DBHandler
    :members:
    :undoc-members:

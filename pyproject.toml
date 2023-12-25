@@ -1,5 +1,5 @@
 [project]
-name = "ezycord"
+name = "cloudcord"
 description = "An easy-to-use extension for Discord.py and Pycord"
 readme = "README.md"
 requires-python = ">=3.9"
@@ -24,15 +24,15 @@ dynamic = ["dependencies", "optional-dependencies", "version"]
 
 [tool.setuptools.dynamic]
 dependencies = {file = "requirements.txt"}
-version = {attr = "ezycord.__version__"}
+version = {attr = "cloudcord.__version__"}
 
 [tool.setuptools.dynamic.optional-dependencies]
 docs = {file = "docs/requirements.txt"}
 dev = {file = "dev-requirements.txt"}
 
 [project.urls]
-GitHub = "https://github.com/Timoo12/ezycord"
-Documentation = "https://ezycord.readthedocs.io"
+GitHub = "https://github.com/littxle/cloudcord"
+Documentation = "https://cloudcord.readthedocs.io"
 
 [build-system]
 requires = ["setuptools>=43.0.0", "wheel"]

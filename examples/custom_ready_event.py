@@ -1,6 +1,6 @@
-import ezycord
+import cloudcord
 
-bot = ezycord.Bot(
+bot = cloudcord.Bot(
     ready_event=None,  # Disable default ready event
 )
 
@@ -18,7 +18,7 @@ async def on_ready():
 
     bot.ready(
         title="Bot is online!",
-        style=ezycord.ReadyEvent.default,
+        style=cloudcord.ReadyEvent.default,
     )
 
 

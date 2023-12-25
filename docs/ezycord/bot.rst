@@ -1,6 +1,6 @@
 Bot
 =======================
 
-.. automodule:: ezycord.bot
+.. automodule:: cloudcord.bot
    :members:
    :undoc-members:

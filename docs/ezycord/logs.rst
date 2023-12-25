@@ -1,6 +1,6 @@
 Logs
 =======================
 
-.. automodule:: ezycord.logs
+.. automodule:: cloudcord.logs
    :members:
    :undoc-members:

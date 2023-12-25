@@ -1,6 +1,6 @@
 Utils
 =======================
 
-.. automodule:: ezycord.utils
+.. automodule:: cloudcord.utils
    :members:
    :undoc-members:

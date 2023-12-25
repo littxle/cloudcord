@@ -2,10 +2,10 @@ import asyncio
 
 import discord
 
-import ezycord
+import cloudcord
 
 
-class Bot(ezycord.Bot):
+class Bot(cloudcord.Bot):
     def __init__(self):
         super().__init__(intents=discord.Intents.default())
 

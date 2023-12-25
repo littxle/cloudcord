@@ -87,7 +87,7 @@ class Blacklist(Cog, hidden=True):
     if PYCORD:
         admin = discord.SlashCommandGroup(
             t("admin_group"),
-            description="ezycord admin commands",
+            description="cloudcord admin commands",
             guild_ids=EzConfig.admin_guilds,
             default_member_permissions=discord.Permissions(administrator=True),
         )
@@ -96,7 +96,7 @@ class Blacklist(Cog, hidden=True):
     else:
         admin = discord.app_commands.Group(
             name=t("admin_group"),
-            description="ezycord admin commands",
+            description="cloudcord admin commands",
             guild_ids=EzConfig.admin_guilds,
             default_permissions=discord.Permissions(administrator=True),
         )

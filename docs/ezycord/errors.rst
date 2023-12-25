@@ -1,6 +1,6 @@
 Exceptions
 =======================
 
-.. automodule:: ezycord.errors
+.. automodule:: cloudcord.errors
    :members:
    :undoc-members:

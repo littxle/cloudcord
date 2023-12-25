@@ -1,1 +1,1 @@
-include ezycord/internal/language/*.json
+include cloudcord/internal/language/*.json

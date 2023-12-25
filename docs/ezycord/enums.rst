@@ -1,6 +1,6 @@
 Enums
 =======================
 
-.. automodule:: ezycord.enums
+.. automodule:: cloudcord.enums
    :members:
    :undoc-members:

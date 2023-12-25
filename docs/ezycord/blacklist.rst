@@ -1,6 +1,6 @@
 Blacklist
 =======================
 
-.. automodule:: ezycord.blacklist
+.. automodule:: cloudcord.blacklist
    :members:
    :undoc-members:

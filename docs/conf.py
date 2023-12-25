@@ -12,9 +12,9 @@ from datetime import date
 
 sys.path.insert(0, os.path.abspath("../"))
 
-from ezycord import __version__
+from cloudcord import __version__
 
-project = "ezycord"
+project = "cloudcord"
 copyright = f"{date.today().year}, timoodev"
 author = "timoodev"
 release = __version__
@@ -61,5 +61,5 @@ html_theme = "furo"
 html_static_path = ["_static"]
 
 html_title = f"<h3 align='center'>{release}</h3>"
-html_logo = "_static/ezycord.png"
+html_logo = "_static/cloudcord.png"
 html_favicon = "_static/favicon.ico"

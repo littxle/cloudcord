@@ -33,7 +33,7 @@ class Bold(Style):
     TL, TR, BL, BR, H, V, M, L, R, T, B = "╔", "╗", "╚", "╝", "═", "║", "╬", "╠", "╣", "╦", "╩"
 
 
-READY_TITLE: str = f"Bot is online with ezycord {__version__}"
+READY_TITLE: str = f"Bot is online with cloudcord {__version__}"
 DEFAULT_COLORS: list[str] = [Fore.CYAN, Fore.MAGENTA, Fore.YELLOW, Fore.GREEN, Fore.BLUE, Fore.RED]
 
 

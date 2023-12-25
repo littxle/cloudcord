@@ -1,6 +1,6 @@
 Time
 =======================
 
-.. automodule:: ezycord.times
+.. automodule:: cloudcord.times
    :members:
    :undoc-members:

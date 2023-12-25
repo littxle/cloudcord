@@ -24,7 +24,7 @@ Modify language files
 
    - Include any keys that you want to override in your JSON file.
 
-3. Pass the language string into :meth:`~ezycord.bot.Bot` to set your language.
+3. Pass the language string into :meth:`~cloudcord.bot.Bot` to set your language.
 
 .. code-block:: python
 
@@ -36,10 +36,10 @@ Modify language files
 Language files
 --------------
 
-.. literalinclude:: ../../ezycord/internal/language/en.json
+.. literalinclude:: ../../cloudcord/internal/language/en.json
    :language: python
    :caption: The default language file for English.
 
-.. literalinclude:: ../../ezycord/internal/language/de.json
+.. literalinclude:: ../../cloudcord/internal/language/de.json
    :language: python
    :caption: The default language file for German.

@@ -1,6 +1,6 @@
 Components
 =======================
 
-.. automodule:: ezycord.components
+.. automodule:: cloudcord.components
    :members:
    :undoc-members:

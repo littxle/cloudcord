@@ -1,8 +1,8 @@
 import discord
 
-import ezycord
+import cloudcord
 
-bot = ezycord.Bot(
+bot = cloudcord.Bot(
     intents=discord.Intents.default(),
     error_webhook_url="WEBHOOK_URL",  # Replace with your webhook URL
     language="de",

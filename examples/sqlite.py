@@ -1,7 +1,7 @@
-import ezycord
+import cloudcord
 
 
-class CloudDB(ezycord.DBHandler):
+class CloudDB(cloudcord.DBHandler):
     def __init__(self):
         super().__init__("cloud.db")
 

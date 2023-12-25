@@ -1,6 +1,6 @@
 Embeds
 =======================
 
-.. automodule:: ezycord.emb
+.. automodule:: cloudcord.emb
    :members:
    :undoc-members:

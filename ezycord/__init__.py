@@ -1,4 +1,4 @@
-__title__ = "ezycord"
+__title__ = "cloudcord"
 __author__ = "timoodev"
 __license__ = "MIT"
 __version__ = "0.5.1"

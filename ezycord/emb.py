@@ -7,12 +7,12 @@ Here is an example for sending a success message within a Pycord application com
 
 .. code-block:: python
 
-    import ezycord
+    import cloudcord
 
-    bot = ezycord.Bot()
+    bot = cloudcord.Bot()
 
     @bot.slash_command()
-    async def hey(ctx: ezycord.EzContext):
+    async def hey(ctx: cloudcord.EzContext):
         await ctx.success("Success!")
 
 In any other case, the interaction must be passes to the template method.
@@ -95,7 +95,7 @@ def set_embed_templates(
     -------
     .. code-block:: python
 
-        from ezycord import emb
+        from cloudcord import emb
 
         embed = discord.Embed(
             title="Error",

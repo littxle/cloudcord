@@ -47,7 +47,7 @@ if TYPE_CHECKING:
 
 
 class Bot(_main_bot):  # type: ignore
-    """The ezycord bot class. This is a subclass of :class:`discord.Bot` if you use Pycord.
+    """The cloudcord bot class. This is a subclass of :class:`discord.Bot` if you use Pycord.
 
     .. hint::
 
@@ -599,7 +599,7 @@ class Bot(_main_bot):  # type: ignore
         )
         self.enabled_extensions.append("help")
         if not DPY:
-            self.load_extension("ezycord.cogs.pyc.help_setup", package="ezycord")
+            self.load_extension("cloudcord.cogs.pyc.help_setup", package="cloudcord")
 
     def add_status_changer(
         self,
@@ -674,7 +674,7 @@ class Bot(_main_bot):  # type: ignore
         )
         self.enabled_extensions.append("status_changer")
         if not DPY:
-            self.load_extension("ezycord.cogs.pyc.status_changer_setup", package="ezycord")
+            self.load_extension("cloudcord.cogs.pyc.status_changer_setup", package="cloudcord")
 
     def add_blacklist(
         self,
@@ -718,7 +718,7 @@ class Bot(_main_bot):  # type: ignore
 
         self.enabled_extensions.append("blacklist")
         if not DPY:
-            self.load_extension("ezycord.cogs.pyc.blacklist_setup", package="ezycord")
+            self.load_extension("cloudcord.cogs.pyc.blacklist_setup", package="cloudcord")
 
     async def setup_hook(self):
         """This is used for Discord.py startup and should not be called manually."""
@@ -727,7 +727,7 @@ class Bot(_main_bot):  # type: ignore
             await self.load_extension(cog)
 
         for ext in self.enabled_extensions:
-            await self.load_extension(f".cogs.dpy.{ext}_setup", package="ezycord")
+            await self.load_extension(f".cogs.dpy.{ext}_setup", package="cloudcord")
 
     def _run_setup(
         self,
@@ -811,7 +811,7 @@ class Bot(_main_bot):  # type: ignore
 class PrefixBot(Bot, commands.Bot):
     """A subclass of :class:`discord.ext.commands.Bot` that implements the :class:`Bot` class.
 
-    This class can be used if you want to use ezycord with prefix commands.
+    This class can be used if you want to use cloudcord with prefix commands.
     This is only needed for Pycord.
     """
 
@@ -822,7 +822,7 @@ class PrefixBot(Bot, commands.Bot):
 class BridgeBot(Bot, bridge.Bot):
     """A subclass of :class:`discord.ext.bridge.Bot` that implements the :class:`Bot` class.
 
-    This class can be used if you want to use ezycord with bridge commands.
+    This class can be used if you want to use cloudcord with bridge commands.
     This is only needed for Pycord.
     """
 

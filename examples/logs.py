@@ -2,8 +2,8 @@ import logging
 
 from colorama import Fore
 
-import ezycord
-from ezycord import log
+import cloudcord
+from cloudcord import log
 
 # overwrite colors for specific log levels
 # this can be done with strings or with colorama
@@ -13,8 +13,8 @@ colors = {
 }
 
 # call this function before creating the bot
-ezycord.set_log(
-    log_format=ezycord.LogFormat.default,
+cloudcord.set_log(
+    log_format=cloudcord.LogFormat.default,
     colors=colors,
     webhook_url="WEBHOOK_URL",  # Replace with your webhook URL
 )
@@ -22,11 +22,11 @@ ezycord.set_log(
 log.debug("This is a debug message")
 log.info("This is an info message")
 
-ezycord.custom_log("CUSTOM", "This is a message with a custom log level")
+cloudcord.custom_log("CUSTOM", "This is a message with a custom log level")
 
-bot = ezycord.Bot()
+bot = cloudcord.Bot()
 
 if __name__ == "__main__":
     # Load all cogs with a custom log style
-    bot.load_cogs("cogs", log=ezycord.CogLog.default, log_color="green")
+    bot.load_cogs("cogs", log=cloudcord.CogLog.default, log_color="green")
     bot.run("TOKEN")  # Replace with your bot token

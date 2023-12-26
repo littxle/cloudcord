@@ -62,4 +62,4 @@ html_static_path = ["_static"]
 
 html_title = f"<h3 align='center'>{release}</h3>"
 html_logo = "_static/cloudcord.png"
-html_favicon = "_static/favicon.ico"
+html_favicon = "_static/cloudcord.ico"

@@ -1,12 +1,12 @@
 name: Feature Request
-description: Request a feature that you would like to see in clCord
+description: Request a feature that you would like to see in cloudcord
 labels: [enhancement]
 
 body:
 - type: markdown
   attributes:
     value: |
-      - Check if the feature was already requested [here](https://github.com/tibue99/clcord/issues).
+      - Check if the feature was already requested [here](https://github.com/littxle/cloudcord/issues).
       - Include only one feature per issue.
 
 - type: textarea

@@ -38,7 +38,7 @@ else:
 
 if TYPE_CHECKING:
     import discord  # type: ignore
-    from discord.ext import commands
+    from discord.ext import commands  # type: ignore
 
     if hasattr(discord, "Bot"):
         _main_bot = discord.Bot
@@ -96,7 +96,7 @@ class Bot(_main_bot):  # type: ignore
         error_webhook_url: str | None = None,
         ignored_errors: list[Any] | None = None,
         full_error_traceback: bool = False,
-        language: str = "de",
+        language: str = "en",
         ready_event: ReadyEvent | None = ReadyEvent.default,
         **kwargs,
     ):

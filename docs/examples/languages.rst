@@ -28,7 +28,7 @@ Modify language files
 
 .. code-block:: python
 
-   bot = clcord.Bot(language="fr")  # French (loaded from cl_fr.json)
+   bot = cloudcord.Bot(language="fr")  # French (loaded from cl_fr.json)
 
 
 .. _language:

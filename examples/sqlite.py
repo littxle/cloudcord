@@ -1,9 +1,9 @@
 import cloudcord
 
 
-class CloudDB(cloudcord.DBHandler):
+class UserDB(cloudcord.DBHandler):
     def __init__(self):
-        super().__init__("cloud.db")
+        super().__init__("user.db")
 
     async def setup(self):
         """Execute a single query."""

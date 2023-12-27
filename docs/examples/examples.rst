@@ -12,7 +12,6 @@ Feel free to choose an example below. On this page, you can see an example for t
    ready_event
    aiosqlite
    help_cmd
-   status_event
 
 Main Example
 ------------

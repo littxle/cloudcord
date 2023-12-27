@@ -81,8 +81,7 @@ class ReadyEvent(Enum):
     table_bold = 5
     table_vertical = 6
     table_vertical_bold = 7
-    
-    default = table_vertical
+    default = table
 
     def __str__(self):
         return self.name

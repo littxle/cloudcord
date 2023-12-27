@@ -3,7 +3,7 @@ Main Example
 You can create your bot by using the :doc:`cloudcord.Bot </cloudcord/bot>` class.
 
 .. hint::
-   If you are using Pycord with Prefix commands, use ``cloudcord.PrefixBot`` instead.
+    If you are using Pycord with Prefix commands, use ``cloudcord.PrefixBot`` instead.
 
 - You can load all of your cogs at once with :meth:`~cloudcord.bot.Bot.load_cogs`.
 - If you pass in a webhook URL, errors will be sent to that webhook.

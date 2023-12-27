@@ -6,12 +6,12 @@ If you don't set any custom templates, default templates will be used.
 More information can be found in the :doc:`Embed Documentation </cloudcord/embed>`.
 
 .. literalinclude:: ../../examples/embed_templates.py
-:language: python
+   :language: python
 
 1. Pass a string to the :meth:`~cloudcord.emb.error` method to send an error message.
 
-.. note::
+   .. note::
 
-      The string will be used as the description of the error embed.
+       The string will be used as the description of the error embed.
 
 2. The final embed will be sent as an interaction response or a normal message, depending on the target type.

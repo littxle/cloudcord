@@ -6,14 +6,14 @@ body:
 - type: markdown
   attributes:
     value: |
-      - Check if the bug was already reported [here](https://github.com/tibue99/clcord/issues).
+      - Check if the bug was already reported [here](https://github.com/littxle/cloudcord/issues).
       - Include only one bug per issue.
       - Make sure that only one Discord package is installed.
 
 - type: input
   attributes:
-    label: clCord Version
-    description: Which version of clCord are you using?
+    label: cloudcord Version
+    description: Which version of cloudcord are you using?
     placeholder: X.Y.Z
   validations:
     required: true

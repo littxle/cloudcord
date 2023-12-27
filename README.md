@@ -1,7 +1,9 @@
-[![cloudcord]( https://raw.githubusercontent.com/littxle/cloudcord/main/docs/_static/cloudcord.png)](https://github.com/littxle/cloudcord)
+[![cloudcord](https://cloudcord.readthedocs.io/en/latest/_static/cloudcord.png)](https://github.com/littxle/cloudcord)
 
+[![](https://img.shields.io/discord/1010915072694046794?label=discord&style=for-the-badge&logo=discord&color=5865F2&logoColor=white)](https://discord.gg/zfvbjTclv6)
 [![](https://img.shields.io/pypi/v/cloudcord.svg?style=for-the-badge&logo=pypi&color=yellow&logoColor=white)](https://pypi.org/project/cloudcord/)
 [![](https://img.shields.io/pypi/l/cloudcord?style=for-the-badge)](https://github.com/littxle/cloudcord/blob/main/LICENSE)
+[![](https://aschey.tech/tokei/github/littxle/cloudcord?style=for-the-badge)](https://github.com/littxle/cloudcord)
 
 An easy-to-use extension for [Discord.py](https://github.com/Rapptz/discord.py)
 and [Pycord](https://github.com/Pycord-Development/pycord) with some utility functions.
@@ -44,7 +46,7 @@ cloudcord @ git+https://github.com/littxle/cloudcord
 - [PyPi](https://pypi.org/project/cloudcord/)
 
 ## Examples
-- For more examples, see the [example repository](https://github.com/littxle/cloudcord-template)
+- For more examples, see the [example repository](https://github.com/littxle/cloudcord_template)
 or the [sample code](https://cloudcord.readthedocs.io/en/latest/examples/examples.html).
 - **Note:** It's recommended to [load the token](https://guide.pycord.dev/getting-started/creating-your-first-bot#protecting-tokens) from a `.env` file instead of hardcoding it.
 cloudcord can automatically load the token if a `TOKEN` variable is present in the `.env` file.

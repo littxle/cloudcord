@@ -38,9 +38,9 @@ class DBHandler:
 
     .. code-block:: python3
 
-            async with DBHandler("clcord.db") as db:
+            async with DBHandler("cloudcord.db") as db:
                 await db.exec("CREATE TABLE IF NOT EXISTS vip (id INTEGER PRIMARY KEY, name TEXT)")
-                await db.exec("INSERT INTO vip (name) VALUES (?)", "Timo")
+                await db.exec("INSERT INTO vip (name) VALUES (?)", "littxle")
     """
 
     _auto_setup: list[DBHandler] = []
@@ -119,14 +119,14 @@ class DBHandler:
 
             class VipDB(DBHandler):
                 def __init__(self):
-                    super().__init__("clcord.db")
+                    super().__init__("cloudcord.db")
 
                 async def setup(self):
                     async with self.start() as db:
                         await db.exec(
                             "CREATE TABLE IF NOT EXISTS vip (id INTEGER PRIMARY KEY, name TEXT)"
                         )
-                        await db.exec("INSERT INTO vip (name) VALUES (?)", "Timo")
+                        await db.exec("INSERT INTO vip (name) VALUES (?)", "littxle")
         """
         cls = deepcopy(self)
         cls.auto_connect = True

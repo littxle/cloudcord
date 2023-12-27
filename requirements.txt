@@ -2,4 +2,3 @@ aiohttp
 colorama
 aiosqlite
 python-dotenv
-py-cord

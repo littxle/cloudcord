@@ -1,7 +1,6 @@
 """Utility functions for the ready event."""
-from __future__ import annotations
 
-import platform
+from __future__ import annotations
 
 from collections import OrderedDict
 from itertools import cycle, islice
@@ -53,11 +52,10 @@ def get_default_info(bot: discord.ext.commands.Bot) -> list[tuple[str, str]]:
 
     return [
         ("Bot", f"{bot.user}"),
+        ("ID", f"{bot.user.id}"),
         (lib_name, discord.__version__),
-        ("Python", f"{platform.python_version()}"),
         ("Commands", f"{len(cmds):,}"),
         ("Guilds", f"{len(bot.guilds):,}"),
-        ("Users", f"{len(bot.users)}"),
         ("Latency", f"{round(bot.latency * 1000):,}ms"),
     ]
 

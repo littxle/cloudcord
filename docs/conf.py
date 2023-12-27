@@ -55,7 +55,7 @@ exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 
 # Options for HTML output and furo customisation
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
-# https://pradyunsg.me/furo/customisation/
+# https://pradyunsg.me/furo/customisation/ü
 
 html_theme = "furo"
 html_static_path = ["_static"]

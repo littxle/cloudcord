@@ -1,8 +1,10 @@
 from __future__ import annotations
 
+import inspect
 import traceback
 from copy import deepcopy
 from functools import cache
+from typing import Callable
 
 from ..internal.dc import discord
 from .config import clConfig
@@ -84,49 +86,93 @@ def get_error_text(
     return description
 
 
-def replace_values(s: str, interaction: discord.Interaction) -> str:
+def get_bot_values(bot: discord.Client) -> dict[str, str]:
+    return {
+        "guild_count": str(len(bot.guilds)),
+        "user_count": str(len(bot.users)),
+        "cmd_count": str(bot.cmd_count),
+    }
+
+
+def replace_values(
+    s: str, interaction: discord.Interaction, custom_dict: dict[str, str] | None = None
+) -> str:
     user = interaction.user
-    s = s.replace("{user}", f"{user}")
-    s = s.replace("{username}", user.name)
-    s = s.replace("{user_mention}", user.mention)
-    s = s.replace("{user_id}", f"{user.id}")
-    s = s.replace("{user_avatar}", user.display_avatar.url)
+
+    replace = {
+        "user": f"{user}",
+        "username": user.name,
+        "user_mention": user.mention,
+        "user_id": f"{user.id}",
+        "user_avatar": user.display_avatar.url,
+        **get_bot_values(interaction.client),
+    }
+    if custom_dict:
+        replace = {**replace, **custom_dict}
 
     if interaction.guild:
-        s = s.replace("{servername}", interaction.guild.name)
+        replace["servername"] = interaction.guild.name
     else:
-        s = s.replace("{servername}", interaction.client.user.name)
+        replace["servername"] = interaction.client.user.name
 
     if interaction.guild and interaction.guild.icon:
-        s = s.replace("{server_icon}", interaction.guild.icon.url)
+        replace["server_icon"] = interaction.guild.icon.url
     else:
-        s = s.replace("{server_icon}", interaction.client.user.display_avatar.url)
+        replace["server_icon"] = interaction.client.user.display_avatar.url
+
+    for key, value in replace.items():
+        s = s.replace("{" + key + "}", value)
 
     return s
 
 
-def replace_dict(content: dict | str, interaction: discord.Interaction) -> dict | str:
+def replace_dict(
+    content: dict | str, interaction: discord.Interaction, custom_dict: dict[str, str] | None = None
+) -> dict | str:
     """Recursively loop through a dictionary and replace certain values
     with information from the current interaction.
     """
     if isinstance(content, str):
-        return replace_values(content, interaction)
+        return replace_values(content, interaction, custom_dict)
 
     for key, value in content.items():
         if isinstance(value, str):
-            content[key] = replace_values(value, interaction)
+            content[key] = replace_values(value, interaction, custom_dict)
         elif isinstance(value, list):
             items = []
             for element in value:
-                items.append(replace_dict(element, interaction))
+                items.append(replace_dict(element, interaction, custom_dict))
             content[key] = items
         elif isinstance(value, dict):
-            content[key] = replace_dict(value, interaction)
+            content[key] = replace_dict(value, interaction, custom_dict)
 
     return content
 
 
-def replace_embed_values(embed: discord.Embed, interaction: discord.Interaction):
+def replace_embed_values(
+    embed: discord.Embed,
+    interaction: discord.Interaction,
+    custom_dict: dict[str, str] | None = None,
+):
     embed_dict = deepcopy(embed).to_dict()
-    embed_dict = replace_dict(embed_dict, interaction)
+    embed_dict = replace_dict(embed_dict, interaction, custom_dict)
     return discord.Embed.from_dict(embed_dict)
+
+
+async def fill_custom_variables(custom_vars: dict[str, Callable | str]) -> dict[str, str]:
+    """Loop through custom variables that were given as kwargs and replace them with
+    their current value.
+    """
+    new_custom_vars = {}
+
+    for key, value in custom_vars.items():
+        if inspect.iscoroutinefunction(value):
+            replace_value = await value()
+        elif callable(value):
+            replace_value = value()
+        else:
+            replace_value = value
+
+        new_custom_vars[key] = str(replace_value)
+
+    return new_custom_vars

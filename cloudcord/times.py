@@ -148,7 +148,7 @@ def convert_to_seconds(
     Raises
     ------
     :exc:`ConvertTimeError`
-         No valid number was found, or ``default_unit`` is ``None`` while no valid unit was found.
+        No valid number was found, or ``default_unit`` is ``None`` while no valid unit was found.
 
     Example
     -------

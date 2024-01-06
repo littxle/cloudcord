@@ -245,7 +245,6 @@ def set_log(
     name: str = DEFAULT_LOG,
     log_level: int = logging.INFO,
     *,
-    console: bool = True,
     file: bool | str = False,
     file_mode: str = "w",
     log_format: str | LogFormat = LogFormat.default,
@@ -267,8 +266,6 @@ def set_log(
         The name of the logger.
     log_level:
         The log level for default log messages ``logging.INFO``.
-    console:
-        Whether to log to the console. Defaults to ``True``.
     file:
         Whether to log to a file. Defaults to ``False``.
         You can also pass a path to a log file.
@@ -329,9 +326,6 @@ def set_log(
         )
     elif isinstance(file, str):
         handlers.append(logging.FileHandler(file, mode=file_mode, encoding="utf-8"))
-
-    if console:
-        handlers.append(logging.StreamHandler(sys.stdout))
 
     space_after_level = True
     if "%(levelname)s " not in log_format and "%(levelname)s{end} " not in log_format:

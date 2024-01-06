@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+from typing import Callable, Literal
 
 
 @dataclass
@@ -9,6 +10,8 @@ class Blacklist:
     db_name: str
     raise_error: bool
     owner_only: bool
+    disabled_commands: list[clConfig.BLACKLIST_COMMANDS]
+    overwrites: dict[str, Callable]
 
 
 class clConfig:
@@ -17,7 +20,10 @@ class clConfig:
     These values are usually set only once, but are used throughout the runtime of the bot.
     """
 
+    BLACKLIST_COMMANDS = Literal["add", "remove", "show", "owner", "server", "show_servers"]
+
     lang: str = "en"
+    default_lang: str = "de"
     embed_templates: dict = {}
 
     # Blacklist

@@ -4,11 +4,15 @@ from functools import cache
 from pathlib import Path
 
 from ...logs import log
+from ..config import clConfig
 
 
 @cache
 def load_lang(language: str) -> dict[str, dict[str, str]]:
-    """Loads the default language file and checks if the user provided a custom language file."""
+    """Loads the given language file and checks if the user provided a custom language file."""
+
+    if language == "auto":
+        language = clConfig.default_lang
 
     lang = {}
     parent = Path(__file__).parent.absolute()
@@ -23,7 +27,7 @@ def load_lang(language: str) -> dict[str, dict[str, str]]:
     # check if the user has a custom language file
     for root, directories, files in os.walk(os.getcwd()):
         for filename in files:
-            if filename != f"^cl_{language}.json":
+            if filename != f"cl_{language}.json":
                 continue
 
             log.debug(f"Custom language file loaded: **{filename}**")
@@ -37,7 +41,7 @@ def load_lang(language: str) -> dict[str, dict[str, str]]:
                             lang[category] = {}
                         lang[category][value] = values[value]
 
-    if lang == {}:
+    if clConfig.lang != "auto" and lang == {}:
         log.warn(f"Language file for language '{language}' not found. Falling back to 'en'.")
 
     return lang

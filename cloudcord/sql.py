@@ -40,7 +40,7 @@ class DBHandler:
 
             async with DBHandler("cloudcord.db") as db:
                 await db.exec("CREATE TABLE IF NOT EXISTS vip (id INTEGER PRIMARY KEY, name TEXT)")
-                await db.exec("INSERT INTO vip (name) VALUES (?)", "littxle")
+                await db.exec("INSERT INTO vip (name) VALUES (?)", "Fabo")
     """
 
     _auto_setup: list[DBHandler] = []
@@ -126,7 +126,7 @@ class DBHandler:
                         await db.exec(
                             "CREATE TABLE IF NOT EXISTS vip (id INTEGER PRIMARY KEY, name TEXT)"
                         )
-                        await db.exec("INSERT INTO vip (name) VALUES (?)", "littxle")
+                        await db.exec("INSERT INTO vip (name) VALUES (?)", "Fabo")
         """
         cls = deepcopy(self)
         cls.auto_connect = True
@@ -155,6 +155,11 @@ class DBHandler:
 
         if self.connection is not None:
             return self.connection
+
+        if "conv_json" in kwargs:
+            self.conv_json = kwargs.pop("conv_json")
+        if "foreign_keys" in kwargs:
+            self.foreign_keys = kwargs.pop("foreign_keys")
 
         con_args = {**kwargs, **self.kwargs}
         con = await aiosqlite.connect(self.DB, **con_args)

@@ -40,7 +40,7 @@ class DBHandler:
 
             async with DBHandler("cloudcord.db") as db:
                 await db.exec("CREATE TABLE IF NOT EXISTS vip (id INTEGER PRIMARY KEY, name TEXT)")
-                await db.exec("INSERT INTO vip (name) VALUES (?)", "Fabo")
+                await db.exec("INSERT INTO vip (name) VALUES (?)", "littxle")
     """
 
     _auto_setup: list[DBHandler] = []
@@ -126,7 +126,7 @@ class DBHandler:
                         await db.exec(
                             "CREATE TABLE IF NOT EXISTS vip (id INTEGER PRIMARY KEY, name TEXT)"
                         )
-                        await db.exec("INSERT INTO vip (name) VALUES (?)", "Fabo")
+                        await db.exec("INSERT INTO vip (name) VALUES (?)", "littxle")
         """
         cls = deepcopy(self)
         cls.auto_connect = True

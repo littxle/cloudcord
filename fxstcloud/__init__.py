@@ -1,7 +1,7 @@
 __title__ = "cloudcord"
-__author__ = "littxle"
+__author__ = "Chill_Fabo"
 __license__ = "MIT"
-__version__ = "0.1.7"
+__version__ = "0.5.2"
 
 from . import blacklist, components, emb, logs, sql, times, utils
 from .bot import *

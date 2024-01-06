@@ -6,7 +6,7 @@ requires-python = ">=3.9"
 license = {text = "MIT"}
 keywords = ["discord", "pycord", "py-cord", "discord.py"]
 authors = [
-    { name = "littxle" }
+    { name = "Chill_Fabo" }
 ]
 classifiers = [
     "Development Status :: 5 - Production/Stable",

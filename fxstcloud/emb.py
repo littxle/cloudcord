@@ -77,12 +77,12 @@ def set_embed_templates(
 
         - ``{servername}`` - The guild where the interaction was initiated
         - ``{server_icon}`` - The URL of the guild's icon
-
-        Bot variables will be replaced with information about the bot.
-
-        - ``{guild_count}`` - Number of servers the bot is in
-        - ``{user_count}`` - Number of users the bot can see
-        - ``{cmd_count}`` - Number of application commands
+        
+        Bot variables will be replaced with infomation about the bot
+        
+        - ``{guild_count}`` - The number of guilds the bot is in.
+        - ``{user_count}`` - The number of users the bot can see.
+        - ``{cmd_count}`` The number of application commands.
 
     Parameters
     ----------

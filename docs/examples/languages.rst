@@ -18,7 +18,7 @@ Modify language files
    - If you want to modify the English language file: ``cl_en.json``.
    - If you want to create a new language file: ``cl_[language].json``.
 
-   For example, if you want to create a French language file, the file name could be ``cl_fr.json``.
+   If you want to create a French language file, the file name could be ``cl_fr.json``.
 
 2. Search the :ref:`language files <language>` and find keys you want to override.
 
@@ -29,6 +29,15 @@ Modify language files
 .. code-block:: python
 
    bot = cloudcord.Bot(language="fr")  # French (loaded from cl_fr.json)
+
+If your bot supports **multiple languages**, set ``language`` to ``auto`` to
+automatically detect the language. You can set a fallback language with ``default_language``.
+
+The fallback language is used when no language file is found for the detected language.
+
+.. code-block:: python
+
+   bot = cloudcord.Bot(language="auto", default_language="en")
 
 
 .. _language:

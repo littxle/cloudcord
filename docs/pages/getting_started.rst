@@ -31,9 +31,9 @@ Example
 A quick example of how cloudcord works. You can find more examples :doc:`here </examples/examples>`.
 
 .. literalinclude:: ../../examples/pycord.py
-   :language: python
-   :caption: Pycord
+    :language: python
+    :caption: Pycord
 
 .. literalinclude:: ../../examples/dpy.py
-   :language: python
-   :caption: Discord.py
+    :language: python
+    :caption: Discord.py

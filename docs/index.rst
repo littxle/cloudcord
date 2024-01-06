@@ -1,15 +1,18 @@
-Welcome to cloudcord's documentation!
-==================================
-This is the documentation for **cloudcord**, an easy-to-use extension for Discord.py and Pycord.
+Welcome to cloudcord
+=================
+
+.. image:: /images/snake.svg
+.. image:: /images/snake_dark.svg
+
 
 .. toctree::
-   :maxdepth: 2
-   :hidden:
-   :caption: Contents
+  :maxdepth: 2
+  :hidden:
+  :caption: Contents
 
-   pages/getting_started
-   examples/examples
-   cloudcord/modules
+  pages/getting_started
+  examples/examples
+  cloudcord/modules
 
 Getting started
 ---------------
@@ -24,6 +27,5 @@ Here are some links to help you get started.
 
 Getting help
 ---------------
-- If you speak German, join our `Discord <https://discord.gg/zfvbjTclv6>`_ server
 - If you're looking for something specific, try to search something by :ref:`genindex`
 - Report bugs and request features on `GitHub <https://github.com/littxle/cloudcord/issues>`_

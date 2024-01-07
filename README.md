@@ -1,6 +1,6 @@
 [![cloudcord](https://cloudcord.readthedocs.io/en/latest/_static/cloudcord.png)](https://github.com/littxle/cloudcord)
 
-[![](https://img.shields.io/discord/1010915072694046794?label=discord&style=for-the-badge&logo=discord&color=5865F2&logoColor=white)](https://discord.gg/zfvbjTclv6)
+[![](https://img.shields.io/discord/1010915072694046794?label=discord&style=for-the-badge&logo=discord&color=5865F2&logoColor=white)](https://discord.gg/8ew7Sw6Tzy)
 [![](https://img.shields.io/pypi/v/cloudcord.svg?style=for-the-badge&logo=pypi&color=yellow&logoColor=white)](https://pypi.org/project/cloudcord/)
 [![](https://img.shields.io/pypi/l/cloudcord?style=for-the-badge)](https://github.com/littxle/cloudcord/blob/main/LICENSE)
 [![](https://aschey.tech/tokei/github/littxle/cloudcord?style=for-the-badge)](https://github.com/littxle/cloudcord)
